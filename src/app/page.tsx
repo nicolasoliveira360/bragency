@@ -886,7 +886,7 @@ export default function Home() {
             {/* Copyright e CNPJ */}
             <div className="flex flex-col md:flex-row items-center justify-between text-sm">
               <p className="text-[#999999] mb-4 md:mb-0">
-                © 2024 ArquiWeb. Todos os direitos reservados.
+                © 2025 BR Agency. Todos os direitos reservados.
               </p>
               <p className="text-[#999999]">
                 CNPJ: 28.788.831/0001-99
