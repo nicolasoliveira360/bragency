@@ -1,0 +1,21 @@
+{
+  "name": "Sites para Arquitetos",
+  "short_name": "BR Agency",
+  "description": "Criamos sites profissionais e modernos para arquitetos que desejam atrair mais clientes e se destacar no mercado digital.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#D4B98C",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
