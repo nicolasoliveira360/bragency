@@ -3,8 +3,19 @@
 import Image from "next/image";
 import Header from './components/Header'
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <Header />
@@ -47,13 +58,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <h1 className="animate-slide-up text-6xl md:text-7xl lg:text-8xl font-light mb-12 leading-[1.1]">
+              <h1 className="animate-slide-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-8 md:mb-12 leading-[1.1]">
                 Sua Arquitetura <br />
                 <span className="font-normal text-[#D4B98C]">Merece Brilhar</span> <br />
                 no Digital
               </h1>
               
-              <p className="animate-slide-up text-xl md:text-2xl mb-16 text-[#999999] delay-100 max-w-2xl leading-relaxed">
+              <p className="animate-slide-up text-lg sm:text-xl md:text-2xl mb-12 md:mb-16 text-[#999999] delay-100 max-w-2xl leading-relaxed">
                 Criamos sites exclusivos para arquitetos que buscam transmitir elegância e sofisticação em cada pixel.
               </p>
               
@@ -108,10 +119,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Benefícios de um <span className="text-[#D4B98C]">Site Profissional</span>
                 </h2>
-                <p className="animate-slide-up text-[#999999] text-xl max-w-3xl mx-auto">
+                <p className="animate-slide-up text-base sm:text-lg md:text-xl text-[#999999] max-w-3xl mx-auto">
                   Transforme sua presença online com um site que reflete a sofisticação do seu trabalho
                 </p>
               </div>
@@ -125,8 +136,8 @@ export default function Home() {
                     <div className="flex items-start space-x-6">
                       <span className="text-[#D4B98C] text-4xl font-light">01</span>
                       <div>
-                        <h3 className="text-2xl font-light mb-4">Credibilidade Instantânea</h3>
-                        <p className="text-[#999999] leading-relaxed">
+                        <h3 className="text-xl sm:text-2xl font-light mb-4">Credibilidade Instantânea</h3>
+                        <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                           Impressione seus clientes desde o primeiro contato com um site que transmite profissionalismo e excelência.
                         </p>
                       </div>
@@ -141,8 +152,8 @@ export default function Home() {
                     <div className="flex items-start space-x-6">
                       <span className="text-[#D4B98C] text-4xl font-light">02</span>
                       <div>
-                        <h3 className="text-2xl font-light mb-4">Visibilidade no Google</h3>
-                        <p className="text-[#999999] leading-relaxed">
+                        <h3 className="text-xl sm:text-2xl font-light mb-4">Visibilidade no Google</h3>
+                        <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                           Seja encontrado por clientes que buscam por arquitetos na sua região através de um site otimizado para SEO.
                         </p>
                       </div>
@@ -157,8 +168,8 @@ export default function Home() {
                     <div className="flex items-start space-x-6">
                       <span className="text-[#D4B98C] text-4xl font-light">03</span>
                       <div>
-                        <h3 className="text-2xl font-light mb-4">Portfólio Elegante</h3>
-                        <p className="text-[#999999] leading-relaxed">
+                        <h3 className="text-xl sm:text-2xl font-light mb-4">Portfólio Elegante</h3>
+                        <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                           Apresente seus projetos de forma profissional e impactante, com galerias interativas e layouts personalizados.
                         </p>
                       </div>
@@ -173,8 +184,8 @@ export default function Home() {
                     <div className="flex items-start space-x-6">
                       <span className="text-[#D4B98C] text-4xl font-light">04</span>
                       <div>
-                        <h3 className="text-2xl font-light mb-4">Leads Qualificados</h3>
-                        <p className="text-[#999999] leading-relaxed">
+                        <h3 className="text-xl sm:text-2xl font-light mb-4">Leads Qualificados</h3>
+                        <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                           Capture leads de qualidade com formulários estratégicos e chamadas para ação eficientes.
                         </p>
                       </div>
@@ -222,10 +233,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Como <span className="text-[#D4B98C]">Funciona</span>
                 </h2>
-                <p className="animate-slide-up text-[#999999] text-xl max-w-3xl mx-auto">
+                <p className="animate-slide-up text-base sm:text-lg md:text-xl text-[#999999] max-w-3xl mx-auto">
                   Um processo transparente e eficiente para criar seu site em apenas 4 dias
                 </p>
               </div>
@@ -241,8 +252,8 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24">
                     <div className="md:text-right md:w-1/2 animate-slide-up">
                       <span className="text-sm text-[#D4B98C] uppercase tracking-wider mb-4 block">Dia 1</span>
-                      <h3 className="text-3xl font-light mb-4">Briefing & Design</h3>
-                      <p className="text-[#999999] leading-relaxed">
+                      <h3 className="text-2xl sm:text-3xl font-light mb-4">Briefing & Design</h3>
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                         Entendemos suas necessidades e preferências para criar um design único que reflita sua identidade profissional.
                       </p>
                     </div>
@@ -257,8 +268,8 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-24">
                     <div className="md:text-left md:w-1/2 animate-slide-up">
                       <span className="text-sm text-[#D4B98C] uppercase tracking-wider mb-4 block">Dia 2</span>
-                      <h3 className="text-3xl font-light mb-4">Desenvolvimento</h3>
-                      <p className="text-[#999999] leading-relaxed">
+                      <h3 className="text-2xl sm:text-3xl font-light mb-4">Desenvolvimento</h3>
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                         Implementamos seu site com as melhores tecnologias, garantindo performance e responsividade.
                       </p>
                     </div>
@@ -273,8 +284,8 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24">
                     <div className="md:text-right md:w-1/2 animate-slide-up">
                       <span className="text-sm text-[#D4B98C] uppercase tracking-wider mb-4 block">Dia 3</span>
-                      <h3 className="text-3xl font-light mb-4">Revisão & Ajustes</h3>
-                      <p className="text-[#999999] leading-relaxed">
+                      <h3 className="text-2xl sm:text-3xl font-light mb-4">Revisão & Ajustes</h3>
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                         Refinamos cada detalhe do seu site com base no seu feedback para garantir a perfeição.
                       </p>
                     </div>
@@ -289,8 +300,8 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-24">
                     <div className="md:text-left md:w-1/2 animate-slide-up">
                       <span className="text-sm text-[#D4B98C] uppercase tracking-wider mb-4 block">Dia 4</span>
-                      <h3 className="text-3xl font-light mb-4">Lançamento</h3>
-                      <p className="text-[#999999] leading-relaxed">
+                      <h3 className="text-2xl sm:text-3xl font-light mb-4">Lançamento</h3>
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed">
                         Seu site vai ao ar com todas as otimizações necessárias para começar a atrair clientes imediatamente.
                       </p>
                     </div>
@@ -347,10 +358,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Por que arquitetos <span className="text-[#D4B98C]">precisam</span> de um site?
                 </h2>
-                <p className="animate-slide-up text-[#999999] text-xl max-w-3xl mx-auto">
+                <p className="animate-slide-up text-lg sm:text-xl md:text-2xl text-white font-light max-w-3xl mx-auto italic">
                   Muitos arquitetos sofrem para conseguir clientes porque:
                 </p>
               </div>
@@ -414,8 +425,8 @@ export default function Home() {
                     <div className="relative">
                       <div className="absolute -left-12 top-0 bottom-0 w-px bg-[#D4B98C]" />
                       <div className="space-y-8">
-                        <h3 className="text-4xl font-light">A <span className="text-[#D4B98C]">solução?</span></h3>
-                        <p className="text-2xl text-white leading-relaxed">
+                        <h3 className="text-3xl sm:text-4xl font-light">A <span className="text-[#D4B98C]">solução?</span></h3>
+                        <p className="text-xl sm:text-2xl text-white leading-relaxed">
                           Um site estratégico, feito para vender seus serviços no piloto automático!
                         </p>
                         <div className="pt-8">
@@ -461,10 +472,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Quanto custa investir em um <span className="text-[#D4B98C]">site profissional?</span>
                 </h2>
-                <p className="animate-slide-up text-2xl text-white font-light max-w-3xl mx-auto italic">
+                <p className="animate-slide-up text-lg sm:text-xl md:text-2xl text-white font-light max-w-3xl mx-auto italic">
                   Pense assim: quanto vale um cliente novo para você?
                 </p>
               </div>
@@ -525,12 +536,12 @@ export default function Home() {
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4B98C] to-[#111111] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-sm" />
                     <div className="p-8 md:p-12 relative z-10">
                       <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-2xl font-light">Plano Básico</h3>
+                        <h3 className="text-xl sm:text-2xl font-light">Plano Básico</h3>
                         <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#D4B98C] flex items-center justify-center">
                           <span className="text-[#D4B98C] text-xl">1</span>
                         </div>
                       </div>
-                      <p className="text-[#999999] leading-relaxed mb-8">
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed mb-8">
                         Para quem quer um site profissional simples e eficiente
                       </p>
                       <a 
@@ -551,12 +562,12 @@ export default function Home() {
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4B98C] to-[#111111] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-sm" />
                     <div className="p-8 md:p-12 relative z-10">
                       <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-2xl font-light">Plano Completo</h3>
+                        <h3 className="text-xl sm:text-2xl font-light">Plano Completo</h3>
                         <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#D4B98C] flex items-center justify-center">
                           <span className="text-[#D4B98C] text-xl">2</span>
                         </div>
                       </div>
-                      <p className="text-[#999999] leading-relaxed mb-8">
+                      <p className="text-base sm:text-lg text-[#999999] leading-relaxed mb-8">
                         Site + gestão de tráfego para resultados ainda mais rápidos
                       </p>
                       <a 
@@ -614,10 +625,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Perguntas <span className="text-[#D4B98C]">Frequentes</span>
                 </h2>
-                <p className="animate-slide-up text-[#999999] text-xl max-w-3xl mx-auto">
+                <p className="animate-slide-up text-base sm:text-lg md:text-xl text-[#999999] max-w-3xl mx-auto">
                   Encontre respostas para as principais dúvidas sobre nosso serviço
                 </p>
               </div>
@@ -671,7 +682,7 @@ export default function Home() {
                     className="group bg-[#111111] border border-[#222222] hover:border-[#D4B98C] transition-colors duration-500"
                   >
                     <summary className="flex items-center justify-between p-6 cursor-pointer text-white">
-                      <span className="text-lg font-light">{faq.pergunta}</span>
+                      <span className="text-base sm:text-lg font-light">{faq.pergunta}</span>
                       <span className="text-[#D4B98C] transition-transform duration-300 group-open:rotate-180">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -690,7 +701,7 @@ export default function Home() {
                       </span>
                     </summary>
                     <div className="px-6 pb-6">
-                      <p className="text-[#999999] leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#999999] leading-relaxed">
                         {faq.resposta}
                       </p>
                     </div>
@@ -741,10 +752,10 @@ export default function Home() {
                   </span>
                   <div className="line-detail" />
                 </div>
-                <h2 className="animate-slide-up text-5xl md:text-6xl font-light mb-8">
+                <h2 className="animate-slide-up text-3xl sm:text-4xl md:text-5xl font-light mb-6 md:mb-8">
                   Pronto para <span className="text-[#D4B98C]">começar?</span>
                 </h2>
-                <p className="animate-slide-up text-[#999999] text-xl max-w-3xl mx-auto">
+                <p className="animate-slide-up text-base sm:text-lg md:text-xl text-[#999999] max-w-3xl mx-auto">
                   Inicie uma conversa agora mesmo e transforme sua presença digital
                 </p>
               </div>

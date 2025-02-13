@@ -62,8 +62,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${roboto.variable} ${montserrat.variable} ${lato.variable} font-sans`}>
+    <html lang="pt-BR" className={`${roboto.variable} ${montserrat.variable} ${lato.variable}`}>
+      <body className="font-sans">
         {children}
       </body>
     </html>
